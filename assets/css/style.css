@@ -1,0 +1,238 @@
+.font-tebal {
+	font-weight: bold;
+}
+
+.gb-kecil {
+	width: 50px;
+	height: auto;
+}
+
+.section-utama {
+	font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	padding: 0 10px;
+}
+
+.isi {
+	min-height: 500px;
+	background-color: #E4E4E4;
+}
+
+.sidebar-brand-icon img {
+	height: 45px;
+	width: auto;
+}
+
+.sisinya {
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 12px;
+}
+
+.text-coklat {
+	color: #6b5747 !important;
+}
+
+.flat {
+	border-radius: 0px !important;
+}
+
+.border-left-coklat {
+	border-left: 0.25rem solid #5d3f32 !important;
+}
+
+#tabelku2,
+.font-standar {
+	font-size: 13px;
+}
+
+#tabelku {
+	font-size: 11px;
+}
+
+.font-kecil {
+	font-size: 10px;
+}
+
+.font-kecil-13 {
+	font-size: 13px;
+}
+
+.font-kecil-12 {
+	font-size: 12px;
+}
+
+th {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 2;
+}
+
+th[scope=row] {
+	position: -webkit-sticky;
+	position: sticky;
+	left: 0;
+	z-index: 1;
+}
+
+#tabelku tbody tr td,
+#tabelku2 tbody tr td {
+	padding: 5px 5px;
+	font-style: normal;
+	color: black;
+}
+
+#tabelku tbody tr td.dobel {
+	line-height: 12px !important;
+}
+
+#tabelku tbody tr td span {
+	font-size: 10px;
+	margin: 0px;
+	color: grey;
+}
+
+hr.small {
+	border-color: black;
+	margin-top: 0px;
+}
+
+.warnahitam {
+	color: black !important;
+}
+
+.aktif {
+	background-color: rgba(212, 247, 226, .5);
+}
+
+.aktie {
+	background-color: red;
+}
+
+.hilang {
+	display: none !important;
+}
+
+.kartuku {
+	padding: 5px 10px;
+}
+
+img.foto-profil {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin-top: 20px;
+}
+
+.dataTables_filter,
+.dataTables_length,
+.dataTables_info {
+	font-size: 13px;
+	color: black;
+}
+
+.dataTables_filter input {
+	border-radius: 0px;
+}
+
+.dataTables_length select {
+	border-radius: 0px;
+	color: black !important;
+}
+
+.page-item.active .page-link {
+	background-color: lightgrey !important;
+	border: 1px solid black;
+}
+
+.page-link {
+	color: black !important;
+	font-size: 13px;
+}
+
+.tbvalidasi {
+	display: inline-block;
+	min-width: 50px;
+	text-align: center;
+}
+
+.kanan {
+	text-align: right !important;
+}
+
+input.kecil,
+select.kecil {
+	padding: 4px !important;
+	height: 29px;
+}
+
+#detailnya {
+	padding: 10px;
+}
+
+.gbdepan {
+	background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), #f2f2f4);
+	height: 200px;
+	border-radius: 0 0 25px 25px;
+	padding: 20px;
+	font-family: 'Montserrat', sans-serif;
+	color: #3d3b3b;
+	margin-top: 100px;
+}
+
+.gbdepan img {
+	height: 300px;
+	float: right;
+	position: absolute;
+	top: 90px;
+	right: 40px
+}
+
+.kursbank {
+	padding: 15px 20px;
+}
+
+.kursbank span {
+	font-size: 20px;
+}
+
+.cekfreeze {
+	height: 700px;
+	overflow: auto;
+}
+
+.judul {
+	font-weight: 700;
+}
+
+.katapengantar {
+	font-size: 13px;
+}
+
+.laman {
+	color: black;
+}
+
+@media only screen and (max-width: 1366px) {
+	.gbdepan {
+		height: 100px;
+		margin-top: 20px;
+		margin-bottom: 40px;
+	}
+
+	.gbdepan img {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.gbdepan {
+		height: 100px;
+		margin-top: 20px;
+		margin-bottom: 60px;
+	}
+
+	.gbdepan img {
+		display: none;
+	}
+}
