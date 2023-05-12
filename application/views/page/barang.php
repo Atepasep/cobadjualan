@@ -7,7 +7,7 @@
         <div class="col-md-4 font-kecil-13">
             <input type="text" name="urlsimpan" id="urlsimpan" value="<?= $urlsimpan; ?>" class="hilang">
             <input type="text" name="urledit" id="urledit" value="<?= $urledit; ?>" class="hilang">
-            <form method="post" action="" name="formbarang" id="formbarang">
+            <form method="post" action="" name="formbarang" id="formbarang" enctype="multipart/form-data">
                 <input type="text" class="hilang" name="id" id="id">
                 <div class="form-group row mb-0">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Kode</label>
@@ -38,7 +38,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-group row mb-2">
+                <div class="form-group row mb-0">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Satuan</label>
                     <div class="col-sm-10">
                         <select class="form-control form-control-sm flat text-gray-900 font-kecil-13" name="id_satuan" id="id_satuan">
@@ -47,6 +47,21 @@
                                 <option value="<?= $satua['id'] ?>"><?= $satua['satuan']; ?></option>
                             <?php } ?>
                         </select>
+                    </div>
+                </div>
+                <div class="form-group row mb-2">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Foto Barang</label>
+                    <div class="col-sm-10">
+                        <div style="border: 2px dashed #adadad; text-align:center;" id="addfoto">
+                            <a href="#" style="text-decoration: none;">
+                                <?php $fotoprofile = $this->session->userdata('foto')=='' ? LOK_BARANG.'add-files.svg' : LOK_BARANG.$this->session->userdata('foto'); ?> 
+                                <img src="<?= $fotoprofile ?>" style="width: auto; height: 150px; min-height: 150px;" id="gbimage" >
+                                <div style="font-size: 10px; color:black;">Tarik gambar kesini atau <strong class="text-red"><u>Cari</u></strong> (max 2MB)</div>
+                            </a>
+                        </div>
+                        <input type="file" class="hilang" accept="image/*" id="fotobarang" name="fotobarang" onchange="loadFile(event)">
+                        <input type="text" class="hilang" id="file_path" name="file_path" >
+                        <input type="text" class="" id="old_gb" name="old_gb" >
                     </div>
                 </div>
                 <div class="form-group row">

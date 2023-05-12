@@ -46,6 +46,8 @@ $("#batalbarang").click(function () {
 	$("#editbarang").removeClass('hilang');
 	$("#hapusbarang").removeClass('hilang');
 	$("#cetakbarang").removeClass('hilang');
+	$("#fotobarang").val('');
+	$("#fotobarang").change();
 	$("#data-tabelku tr.aktif").click();
 })
 $("#simpanbarang").click(function () {
@@ -80,6 +82,39 @@ $("#data-tabelku tr").on('click', function () {
 			$("#id_kategori").val(data[0].id_kategori);
 			$("#id_satuan").val(data[0].id_satuan);
 			$("#barcode").val(data[0].barcode);
+			$("#gbimage").attr('src', 'assets/images/barang/add-files.svg');
+			$("#old_gb").val(data[0].gb);
+			if (data[0].gb != null) {
+				$("#gbimage").attr('src', 'assets/images/barang/' + data[0].gb);
+			}
 		}
 	})
 })
+$("#addfoto").click(function (e) {
+	if ($("#addbarang").hasClass('hilang')) {
+		e.preventDefault();
+		$("#fotobarang").click();
+	}
+});
+$("#fotobarang").change(function () {
+	$("#file_path").val($(this).val());
+})
+// $("#batalfotoprofile").click(function () {
+// 	$("#fotobarang").val('');
+// 	$("#fotobarang").change();
+// })
+// $("#simpanfotoprofile").click(function () {
+// 	document.formprofile.submit();
+// })
+var loadFile = function (event) {
+	var output = document.getElementById('gbimage');
+	var isifile = event.target.files[0];
+	if (!isifile) {
+		output.src = 'assets/images/add-files.svg';
+	} else {
+		output.src = URL.createObjectURL(isifile);
+		output.onload = function () {
+			URL.revokeObjectURL(output.src) // free memory
+		}
+	}
+};

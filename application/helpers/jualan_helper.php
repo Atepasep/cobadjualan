@@ -1,5 +1,7 @@
 <?php
 define('LOK_PAGE', base_url() . 'assets/page/');
+define('LOK_BARANG', base_url() . 'assets/images/barang/');
+define('LOK_UPLOAD_BARANG', "./assets/images/barang/");
 define('LOK_UPLOAD_USER', "./assets/page/images/user/");
 define('LOK_FOTO_USER', base_url() . 'assets/page/images/user/');
 define('LOK_FOTO', base_url() . 'assets/page/images/');
