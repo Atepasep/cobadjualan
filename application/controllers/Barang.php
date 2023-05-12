@@ -58,6 +58,7 @@ class Barang extends CI_Controller
 	}
 	function getdatasatu()
 	{
+		
 		$id = $_POST['id'];
 		$hasil = $this->Mbarang->getdatasatu($id)->result();
 		echo json_encode($hasil);
