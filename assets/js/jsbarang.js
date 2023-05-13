@@ -55,10 +55,13 @@ $("#simpanbarang").click(function () {
 	var kode = $("#kode").val();
 	var sat = $("#id_satuan").val();
 	var kat = $("#id_kategori").val();
-	if (isi != '' && kode != '' && sat != '' && kat != '') {
+	if (isi != '' && kode != '' && sat != '' && kat != '' && ("#barcode").val() != '') {
 		document.formbarang.submit();
 	} else {
-		pesan('error', 'Isi data dengan Lengkap (kode Satuan Pastikan 3 Digit) !');
+		if($("#barcode").val() == ''){
+			invalidfield("barcode",'Barcode harus diisi <i class="fa fa-exclamation-circle"></i>');
+		}
+		pesan('error', 'Isi data dengan Lengkap');
 	}
 })
 $("#cetakbarang").click(function () {

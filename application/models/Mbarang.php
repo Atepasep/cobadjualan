@@ -19,9 +19,6 @@ class Mbarang extends CI_Model
 	function simpan()
 	{
 		$data = $_POST;
-		$this->load->library('form_validation');
-		$this->form_validation->set_rules('barcode', 'Barcode', 'required');
-		if ($this->form_validation->run() == FALSE){
 			$kode = $this->input->post('kode');
 			// $this->db->where('kode =',$data);
 			$cekkode = $this->db->get_where('barang',array('kode'=>$kode));
@@ -43,7 +40,6 @@ class Mbarang extends CI_Model
 			}else{
 				$hasil = false;
 			}
-		}
 		return $hasil;
 	}
 	function edit()

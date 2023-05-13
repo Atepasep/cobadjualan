@@ -153,3 +153,21 @@ function rupiah(amount, decimalSeparator, thousandsSeparator, nDecimalDigits){
   function randomScalingFactor(){
   	return Math.round(Samples.utils.rand(-100, 100));
   }
+  /* Adds Element BEFORE NeighborElement */
+Element.prototype.appendBefore = function (element) {
+    element.parentNode.insertBefore(this, element);
+}, false;
+
+/* Adds Element AFTER NeighborElement */
+Element.prototype.appendAfter = function (element) {
+    element.parentNode.insertBefore(this, element.nextSibling);
+}, false;
+
+  function invalidfield(namafield,pesan){
+	var newElement = document.createElement('div');
+	newElement.innerHTML = pesan;
+	newElement.appendAfter(document.getElementById(namafield));
+	// $("#invalid"+namafield).removeClass('hilang');
+	// $("#"+namafield).addClass('invalid');
+	// $("#invalid"+namafield).Html(pesan);
+  }

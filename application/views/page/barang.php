@@ -12,13 +12,14 @@
                 <div class="form-group row mb-0">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Kode</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control form-control-sm flat text-gray-900 font-kecil-13" id="kode" name="kode" placeholder="Kode Barang">
+                        <input type="text" class="form-control form-control-sm flat text-gray-900 font-kecil-13" id="kode" name="kode" placeholder="Kode Barang" value="<?= $this->session->flashdata('kode'); ?>">
                     </div>
                 </div>
                 <div class="form-group row mb-0">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Barcode</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control form-control-sm flat text-gray-900 font-kecil-13" id="barcode" name="barcode" placeholder="Barcode">
+                        <div class="invalide text-danger hilang" id="invalidbarcode">Barcode harus diisi <i class="fa fa-exclamation-circle"></i></div>
                     </div>
                 </div>
                 <div class="form-group row mb-0">

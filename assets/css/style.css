@@ -213,6 +213,11 @@ select.kecil {
 	color: black;
 }
 
+.invalid {
+	/* border: 2px solid rgb(153, 16, 16); */
+	border: 2px solid #e74a3b;
+}
+
 @media only screen and (max-width: 1366px) {
 	.gbdepan {
 		height: 100px;
