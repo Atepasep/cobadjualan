@@ -16,6 +16,7 @@ $("#addbarang").click(function () {
 	$("#id_kategori").val('');
 	$("#id_satuan").val('');
 	$("#barcode").val('');
+	$("#gbimage").attr('src', 'assets/images/barang/add-files.svg');
 	$("#kode").focus();
 	$.ajax({
 		// dataType: 'json',
@@ -26,7 +27,6 @@ $("#addbarang").click(function () {
 			$("#kode").val(data);
 		}
 	})
-
 })
 $("#editbarang").click(function () {
 	document.formbarang.setAttribute('action', $("#urledit").val());
@@ -68,7 +68,7 @@ $("#cetakbarang").click(function () {
 $("#data-tabelku tr").on('click', function () {
 	var ide = $(this).attr('rel')
 	$("#data-tabelku tr").removeClass('aktif');
-	$("#hapussatuan").attr('data-href', 'satuan/hapus/' + ide);
+	$("#hapusbarang").attr('data-href', 'barang/hapus/' + ide);
 	$(this).addClass('aktif');
 	$.ajax({
 		dataType: 'json',
@@ -83,9 +83,11 @@ $("#data-tabelku tr").on('click', function () {
 			$("#id_satuan").val(data[0].id_satuan);
 			$("#barcode").val(data[0].barcode);
 			$("#gbimage").attr('src', 'assets/images/barang/add-files.svg');
-			$("#old_gb").val(data[0].gb);
 			if (data[0].gb != null) {
 				$("#gbimage").attr('src', 'assets/images/barang/' + data[0].gb);
+				$("#old_gb").val(data[0].gb);
+			} else {
+				$("#old_gb").val('add - files.svg');
 			}
 		}
 	})

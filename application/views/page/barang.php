@@ -61,7 +61,7 @@
                         </div>
                         <input type="file" class="hilang" accept="image/*" id="fotobarang" name="fotobarang" onchange="loadFile(event)">
                         <input type="text" class="hilang" id="file_path" name="file_path" >
-                        <input type="text" class="" id="old_gb" name="old_gb" >
+                        <input type="text" class="hilang" id="old_gb" name="old_gb" >
                     </div>
                 </div>
                 <div class="form-group row">
@@ -90,7 +90,7 @@
                             </span>
                             <span class="text">Batal</span>
                         </a>
-                        <a href="#" class="btn btn-danger btn-icon-split btn-sm flat font-kecil" id="hapusbarang" data-toggle="modal" data-target="#confirm-delete" data-href="http://localhost/jualan/kategori/hapus/x" data-news="Yakin akan menghapus data ini ?">
+                        <a href="#" class="btn btn-danger btn-icon-split btn-sm flat font-kecil" id="hapusbarang" data-toggle="modal" data-target="#confirm-delete" data-href="http://localhost/jualan/barang/hapus/x" data-news="Yakin akan menghapus data ini ?">
                             <span class="icon text-white">
                                 <i class="fas fa-trash-alt"></i>
                             </span>

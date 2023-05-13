@@ -32,19 +32,25 @@ class Barang extends CI_Controller
 	}
 	function hapus($id)
 	{
-		$this->Mkategori->hapus($id);
-		$url = base_url() . 'kategori';
+		$this->Mbarang->hapus($id);
+		$url = base_url() . 'barang';
 		redirect($url);
 	}
 	function simpan()
 	{
-		$hasil = $this->Mbarang->simpan();
-		if ($hasil) {
-			$array = $hasil->row_array();
-			$this->session->set_flashdata('kodebarang', $array['id']);
-			$url = base_url() . 'barang';
-			redirect($url);
-		}
+	
+			$hasil = $this->Mbarang->simpan();
+			if ($hasil) {
+				$array = $hasil->row_array();
+				$this->session->set_flashdata('kodebarang', $array['id']);
+				$url = base_url() . 'barang';
+				redirect($url);
+			}else{
+				$this->session->set_flashdata('msg','akseserror');
+				$url = base_url() . 'barang';
+				redirect($url);
+			}
+
 	}
 	function edit()
 	{

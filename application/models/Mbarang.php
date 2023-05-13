@@ -19,17 +19,30 @@ class Mbarang extends CI_Model
 	function simpan()
 	{
 		$data = $_POST;
-		$data['kode'] = $this->input->post('kode');
-		$data['nama_barang'] = $this->input->post('barang');
-		$data['id_kategori'] = $this->input->post('id_kategori');
-		$data['id_satuan'] = $this->input->post('id_satuan');
-		unset($data['id']);
-		unset($data['barang']);
-		$simpan = $this->db->insert('barang', $data);
-		if ($simpan) {
-			$hasil = $this->db->query("select * from barang where nama_barang = '" . $data['nama_barang'] . "' ");
-		} else {
-			$hasil = 'gagal';
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('barcode', 'Barcode', 'required');
+		if ($this->form_validation->run() == FALSE){
+			$kode = $this->input->post('kode');
+			// $this->db->where('kode =',$data);
+			$cekkode = $this->db->get_where('barang',array('kode'=>$kode));
+			if($cekkode->num_rows() == 0){
+				$data['kode'] = $this->input->post('kode');
+				$data['nama_barang'] = $this->input->post('barang');
+				$data['id_kategori'] = $this->input->post('id_kategori');
+				$data['id_satuan'] = $this->input->post('id_satuan');
+				unset($data['id']);
+				unset($data['barang']);
+				unset($data['file_path']);
+				unset($data['old_gb']);
+				$simpan = $this->db->insert('barang', $data);
+				if ($simpan) {
+					$hasil = $this->db->query("select * from barang where kode = '" . $data['kode'] . "' ");
+				} else {
+					$hasil = 'gagal';
+				}
+			}else{
+				$hasil = false;
+			}
 		}
 		return $hasil;
 	}
