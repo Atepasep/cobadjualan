@@ -11,6 +11,11 @@ class Mbarang extends CI_Model
 		$hasil = $this->db->query("select a.*,b.satuan,c.kategori from barang a left join satuan b on b.id = a.id_satuan left join kategori c on c.id = a.id_kategori where a.id =" . $id . " ");
 		return $hasil;
 	}
+	function getdatabykode($kode){
+		// $this->db->where('kode',$kode);
+		$hasil = $this->db->get_where('barang',array('kode'=>$kode));
+		return $hasil;
+	}
 	function hapus($id)
 	{
 		$this->db->where('id', $id);

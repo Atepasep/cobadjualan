@@ -100,8 +100,8 @@
                    <script src="<?= base_url() . 'assets/js/jsbarang.js' ?>"></script>
                <?php
                     break;
-                case 'pengguna': ?>
-                   <script src="<?= base_url() . 'assets/js/jspengguna.js' ?>"></script>
+                case 'supplier': ?>
+                   <script src="<?= base_url() . 'assets/js/jssupplier.js' ?>"></script>
                <?php
                     break;
                 case 'personil': ?>

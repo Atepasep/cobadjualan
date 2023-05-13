@@ -7,6 +7,7 @@
         <div class="col-md-4 font-kecil-13">
             <input type="text" name="urlsimpan" id="urlsimpan" value="<?= $urlsimpan; ?>" class="hilang">
             <input type="text" name="urledit" id="urledit" value="<?= $urledit; ?>" class="hilang">
+            <input type="text" name="mode" id="mode" value="" class="hilang">
             <form method="post" action="" name="formbarang" id="formbarang" enctype="multipart/form-data">
                 <input type="text" class="hilang" name="id" id="id">
                 <div class="form-group row mb-0">

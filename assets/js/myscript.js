@@ -163,11 +163,12 @@ Element.prototype.appendAfter = function (element) {
     element.parentNode.insertBefore(this, element.nextSibling);
 }, false;
 
-  function invalidfield(namafield,pesan){
-	var newElement = document.createElement('div');
-	newElement.innerHTML = pesan;
-	newElement.appendAfter(document.getElementById(namafield));
-	// $("#invalid"+namafield).removeClass('hilang');
-	// $("#"+namafield).addClass('invalid');
-	// $("#invalid"+namafield).Html(pesan);
+  function invalidfield(namafield,kode){
+	var kata = kode != "sama" ? 'Text '+namafield+' harus diisi ' : namafield+' ada yang sama, periksa '+namafield;
+	$("#"+namafield).addClass('invalid');
+	$("#"+namafield).after('<div class="invalide text-danger">'+kata+' <i class="fa fa-exclamation-circle"></i></div>');
+  }
+  function validfield(namafield){
+	$("#"+namafield).removeClass('invalid');
+	$("#"+namafield).next('div').remove();
   }

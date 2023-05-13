@@ -66,6 +66,11 @@ class Barang extends CI_Controller
 		$hasil = $this->Mbarang->getdatasatu($id)->result();
 		echo json_encode($hasil);
 	}
+	function getdatabykode(){
+		$kode = $_POST['kod'];
+		$hasil = $this->Mbarang->getdatabykode($kode)->result();
+		echo json_encode($hasil);
+	}
 	function kode()
 	{
 		echo carikodebarang();

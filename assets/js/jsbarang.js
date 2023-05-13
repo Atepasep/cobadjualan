@@ -6,6 +6,7 @@ $(document).ready(function () {
 $("#addbarang").click(function () {
 	document.formbarang.setAttribute('action', $("#urlsimpan").val());
 	$(this).addClass('hilang');
+	$("#mode").val('0');
 	$("#simpanbarang").removeClass('hilang');
 	$("#batalbarang").removeClass('hilang');
 	$("#editbarang").addClass('hilang');
@@ -30,13 +31,15 @@ $("#addbarang").click(function () {
 })
 $("#editbarang").click(function () {
 	document.formbarang.setAttribute('action', $("#urledit").val());
+	$("#mode").val('1');
 	$("#addbarang").addClass('hilang');
 	$("#simpanbarang").removeClass('hilang');
 	$("#batalbarang").removeClass('hilang');
 	$(this).addClass('hilang');
 	$("#hapusbarang").addClass('hilang');
 	$("#cetakbarang").addClass('hilang');
-	$("#nama").focus();
+	$("#kode").attr('readonly',true);
+	$("#barang").focus();
 })
 $("#batalbarang").click(function () {
 	$(this).addClass('hilang');
@@ -46,8 +49,13 @@ $("#batalbarang").click(function () {
 	$("#editbarang").removeClass('hilang');
 	$("#hapusbarang").removeClass('hilang');
 	$("#cetakbarang").removeClass('hilang');
+	$("#kode").attr('readonly',false);
 	$("#fotobarang").val('');
 	$("#fotobarang").change();
+	validfield('kode');
+	validfield('barang');
+	validfield('id_kategori');
+	validfield('id_satuan');
 	$("#data-tabelku tr.aktif").click();
 })
 $("#simpanbarang").click(function () {
@@ -55,11 +63,36 @@ $("#simpanbarang").click(function () {
 	var kode = $("#kode").val();
 	var sat = $("#id_satuan").val();
 	var kat = $("#id_kategori").val();
-	if (isi != '' && kode != '' && sat != '' && kat != '' && ("#barcode").val() != '') {
-		document.formbarang.submit();
+	validfield('kode');
+	validfield('barang');
+	validfield('id_kategori');
+	validfield('id_satuan');
+	if (isi != '' && kode != '' && sat != '' && kat != '') {
+		$.ajax({
+			dataType: 'json',
+			type: "POST",
+			url: "barang/getdatabykode",
+			data: { kod: kode },
+			success: function (data) {
+				if(data.length > 0 && $("#mode").val()=='0'){
+					invalidfield("kode","sama");
+				}else{
+					document.formbarang.submit();
+				}
+			}
+		})
 	} else {
-		if($("#barcode").val() == ''){
-			invalidfield("barcode",'Barcode harus diisi <i class="fa fa-exclamation-circle"></i>');
+		if(isi == ''){
+			invalidfield("barang");
+		}
+		if(kode == ''){
+			invalidfield("kode");
+		}
+		if(sat == ''){
+			invalidfield("id_satuan");
+		}
+		if(kat == ''){
+			invalidfield("id_kategori");
 		}
 		pesan('error', 'Isi data dengan Lengkap');
 	}

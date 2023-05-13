@@ -197,7 +197,7 @@
                         <a class="collapse-item font-kecil-12" href="<?= base_url() . 'satuan' ?>">Satuan</a>
                         <a class="collapse-item font-kecil-12" href="<?= base_url() . 'barang' ?>">Barang</a>
                         <a class="collapse-item font-kecil-12" href="<?= base_url() . 'ptkp' ?>">Bill Of Material</a>
-                        <a class="collapse-item font-kecil-12" href="<?= base_url() . 'ptkp' ?>">Supplier</a>
+                        <a class="collapse-item font-kecil-12" href="<?= base_url() . 'supplier' ?>">Supplier</a>
                         <a class="collapse-item font-kecil-12" href="<?= base_url() . 'ptkp' ?>">Customer</a>
                     </div>
                 </div>
