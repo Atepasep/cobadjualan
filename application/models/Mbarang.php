@@ -32,6 +32,7 @@ class Mbarang extends CI_Model
 				$data['nama_barang'] = $this->input->post('barang');
 				$data['id_kategori'] = $this->input->post('id_kategori');
 				$data['id_satuan'] = $this->input->post('id_satuan');
+				$data['gb'] = $this->uploadLogo();
 				unset($data['id']);
 				unset($data['barang']);
 				unset($data['file_path']);
