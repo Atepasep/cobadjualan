@@ -99,7 +99,7 @@ $("#data-tabelku tr").on('click', function () {
 			alamat += data[0].kec != null ? '\rKec. '+data[0].kec : ''; 
 			alamat += data[0].kab != null ? '\rKab/Kota. '+data[0].kab : ''; 
 			alamat += data[0].kodepos != null ? '\r'+data[0].kodepos : ''; 
-			alamat += data[0].kodepos != null ? '\rTelp. '+data[0].telp : ''; 
+			alamat += data[0].telp != null ? '\rTelp. '+data[0].telp : ''; 
 			$("#nama").val(data[0].nama);
 			$("#id").val(data[0].id);
 			$("#xalamat").val(alamat);
@@ -113,7 +113,6 @@ $("#data-tabelku tr").on('click', function () {
 			$("#kab").val(data[0].kab);
 			$("#kodepos").val(data[0].kodepos);
 			$("#telp").val(data[0].telp);
-			$("#kec").val(data[0].alamat);
 			$("#cp").val(data[0].cp);
 			$("#bank").val(data[0].bank);
 			$("#norek").val(data[0].norek);

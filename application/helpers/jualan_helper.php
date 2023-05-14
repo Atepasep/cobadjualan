@@ -18,6 +18,17 @@ function carikodebarang()
 	$kodebarang = $huruf . sprintf("%06s", $urutan);
 	return $kodebarang;
 }
+function carikodecustomer()
+{
+	$CI = &get_instance();
+	$data = $CI->Mcustomer->getkode()->row_array();
+	$kode = $data['kode'];
+	$urutan = (int) substr($kode, 2, 6);
+	$urutan++;
+	$huruf = 'CS';
+	$kodebarang = $huruf . sprintf("%06s", $urutan);
+	return $kodebarang;
+}
 function querydep($data)
 {
 	$CI = &get_instance();

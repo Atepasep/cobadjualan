@@ -198,7 +198,7 @@
                         <a class="collapse-item font-kecil-12" href="<?= base_url() . 'barang' ?>">Barang</a>
                         <a class="collapse-item font-kecil-12" href="<?= base_url() . 'ptkp' ?>">Bill Of Material</a>
                         <a class="collapse-item font-kecil-12" href="<?= base_url() . 'supplier' ?>">Supplier</a>
-                        <a class="collapse-item font-kecil-12" href="<?= base_url() . 'ptkp' ?>">Customer</a>
+                        <a class="collapse-item font-kecil-12" href="<?= base_url() . 'customer' ?>">Customer</a>
                     </div>
                 </div>
             </li>
@@ -232,7 +232,18 @@
                     <span>Penjualan</span>
                 </a>
             </li>
-            <!-- <li class="nav-item <?= $tif3 ?>">
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading text-coklat">
+                Stock
+            </div>
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item <?= $tif4 ?>">
+                <a class="nav-link collapsed" href="#">
+                    <i class="fas fa-fw fa-chain-broken"></i>
+                    <span>Inventory</span>
+                </a>
+            </li>
+            <!-- <li class="nav-item <?= $tif4 ?>">
                 <a class="nav-link collapsed" href="#">
                     <i class="fas fa-fw fa-angle-double-right"></i>
                     <span>Ret.Penjualan</span>
@@ -244,7 +255,7 @@
             </div>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item <?= $tif4 ?>">
+            <li class="nav-item <?= $tif5 ?>">
                 <a class="nav-link" href="<?= base_url() . 'payroll/clear' ?>">
                     <i class="fas fa-fw fa-file-text"></i>
                     <span>Report</span></a>

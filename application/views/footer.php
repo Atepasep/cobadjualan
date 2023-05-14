@@ -104,8 +104,8 @@
                    <script src="<?= base_url() . 'assets/js/jssupplier.js' ?>"></script>
                <?php
                     break;
-                case 'personil': ?>
-                   <script src="<?= base_url() . 'assets/js/jspersonil.js' ?>"></script>
+                case 'customer': ?>
+                   <script src="<?= base_url() . 'assets/js/jscustomer.js' ?>"></script>
                <?php
                     break;
                 case 'mastergaji': ?>
