@@ -20,11 +20,13 @@ class Msupplier extends CI_Model
 	function simpan()
 	{
 		$data = $_POST;
-		$data['kategori'] = $this->input->post('kategori');
 		unset($data['id']);
-		$simpan = $this->db->insert('kategori', $data);
+		unset($data['xalamat']);
+		$data['rt'] = $this->input->post('rt') == '' ? '000' : $this->input->post('rt');
+		$data['rw'] = $this->input->post('rw') == '' ? '000' : $this->input->post('rw');
+		$simpan = $this->db->insert('supplier', $data);
 		if ($simpan) {
-			$hasil = $this->db->query("select * from kategori where kategori = '" . $data['kategori'] . "' ");
+			$hasil = $this->db->query("select * from supplier where nama = '" . $data['nama'] . "' ");
 		} else {
 			$hasil = 'gagal';
 		}
@@ -34,12 +36,14 @@ class Msupplier extends CI_Model
 	{
 		$data = $_POST;
 		$data['id'] = $this->input->post('id');
-		$data['kategori'] = $this->input->post('kategori');
+		$data['rt'] = $this->input->post('rt') == '' ? '000' : $this->input->post('rt');
+		$data['rw'] = $this->input->post('rw') == '' ? '000' : $this->input->post('rw');
+		unset($data['xalamat']);
 		$this->db->where('id', $data['id']);
-		$simpan = $this->db->update('kategori', $data);
+		$simpan = $this->db->update('supplier', $data);
 		//getdatabykode($data['kode']);
 		if ($simpan) {
-			$hasil = $this->db->query("select * from kategori where id ='" . $data['id'] . "' ");
+			$hasil = $this->db->query("select * from supplier where id ='" . $data['id'] . "' ");
 		} else {
 			$hasil = "gagal";
 		}
