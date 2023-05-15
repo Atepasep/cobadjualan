@@ -2,7 +2,7 @@
 <div class="container-fluid laman" style="clear: both;">
     <div class="totaljual text-danger">Rp. 999,999,999.99</div>
     <div class="judul" >Transaksi</div>
-    <p class="katapengantar text-gray-800 mb-1">Pembelian</p>
+    <p class="katapengantar text-gray-800 mb-1">Pembelian Barang</p>
     <hr class="mb-2 mt-1">
     <div class="row" >
         <div class="col-md-5 font-kecil-13">
@@ -10,26 +10,45 @@
             <input type="text" name="urledit" id="urledit" value="<?= $urledit; ?>" class="hilang">
             <form method="post" action="" name="formkategori" id="formkategori">
                 <input type="text" class="hilang" name="id" id="id">
-                <div class="form-group row mb-0">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">ID</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control form-control-sm flat text-gray-900 font-kecil-13" id="idsup" name="idsup" placeholder="Sup ID">
-                    </div>
-                </div>
+                <input type="text" name="idsupplier" id="idsupplier" class="hilang">
                 <div class="form-group row mb-0">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Supplier</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control form-control-sm flat text-gray-900 font-kecil-13" id="supplier" name="supplier" placeholder="Nama Supplier">
+                        <input type="text" class="form-control form-control-sm flat text-gray-900 font-kecil-13" id="supplier" name="supplier" placeholder="NAma Supplier">
                     </div>
                 </div>
-                <div class="form-group row mb-1">
+                <div class="form-group row mb-0">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Alamat</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control form-control-sm flat text-gray-900 font-kecil-13" id="alamat" name="alamat" placeholder="Alamat Supplier">
+                    </div>
+                </div>
+                <div class="form-group row mb-2">
                     <div class="col-sm-12" style="text-align: center;">
-                        <a href="#" class="btn btn-warning btn-icon-split btn-sm flat font-kecil text-hitam" id="addkategori">
+                        <a href="<?= base_url().'pembelian/carisupplier'; ?>" class="btn btn-warning btn-icon-split btn-sm flat font-kecil text-hitam" data-remote="false" style="margin-top: 5px;" data-toggle="modal" data-title="Cari Supplier" data-target="#modalBox" id="carisupplier" title="Search">
                             <span class="icon text-hitam">
                                 <i class="fas fa-search"></i>
                             </span>
                             <span class="text">Cari Supplier</span>
                         </a>
+                    </div>
+                </div>
+                <div class="form-group row mb-0">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Kode Beli</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control form-control-sm flat text-gray-900 font-kecil-13" id="kode" name="kode" value="<?= $this->session->userdata('kodebeli'); ?>" readonly>
+                    </div>
+                </div>
+                <div class="form-group row mb-0">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">No Bukti</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control form-control-sm flat text-gray-900 font-kecil-13" id="nobukti" name="nobukti" placeholder="Bukti Pembelian">
+                    </div>
+                </div>
+                <div class="form-group row mb-0">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Tgl Beli</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control form-control-sm flat text-gray-900 font-kecil-13" id="tglbeli" name="tglbeli" placeholder="Tgl Pembelian">
                     </div>
                 </div>
                 <hr class="mb-1 mt-1">
@@ -111,35 +130,14 @@
                 </div>
             </form>
         </div>
-        <div class="col-md-7">
-            <table class="table table-bordered" id="tabelku">
-                <thead class="bg-warning text-gray-900">
-                    <tr>
-                        <th scope="col" width="10%">NO</th>
-                        <th scope=" col">KATEGORI</th>
-                    </tr>
-                </thead>
-                <tbody id="data-tabelku" class="font-kecil-13">
-                    <?php $no = 0;
-                    foreach ($kategori->result_array() as $datakategori) {
-                        $no++;
-                        if ($this->session->flashdata('kodekategori') && $this->session->flashdata('kodekategori') == $datakategori['id']) {
-                            $aktif = "aktif";
-                        } else {
-                            if ($no == 1) {
-                                $aktif = "aktif";
-                            } else {
-                                $aktif = '';
-                            }
-                        }
-                    ?>
-                        <tr rel="<?= $datakategori['id'] ?>" class="<?= $aktif; ?>">
-                            <td><?= $no; ?></td>
-                            <td><?= $datakategori['kategori']; ?></td>
-                        </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+        <div class="col-md-7 font-kecil-13">
+            <hr class="small mb-0">
+            <div class="row mt-0 font-tebal text-gray-800" style="height: 35px;">
+                <div class="col-sm-6 mt-2">Nama Barang</div>
+                <div class="col-sm-3 mt-2">Jumlah</div>
+                <div class="col-sm-3 mt-2">Harga Rp.</div>
+            </div>
+            <hr class="small">
         </div>
     </div>
 </div>

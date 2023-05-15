@@ -20,16 +20,45 @@ class Pembelian extends CI_Controller
 	{
 		$header['submodul'] = 3;
 		// $header['namalogpayroll']=$this->session->userdata('namalogpayroll');
-		$header['modul'] = 'barang';
-		$data['urlsimpan'] = base_url() . 'barang/simpan';
-		$data['urledit'] = base_url() . 'barang/edit';
+		$header['modul'] = 'pembelian';
+		$data['urlsimpan'] = base_url() . 'pembelian/simpan';
+		$data['urledit'] = base_url() . 'pembelian/edit';
 		$data['barang'] = $this->Mbarang->getdata();
 		$data['satuan'] = $this->Msatuan->getdata();
 		$data['kategori'] = $this->Mkategori->getdata();
-		$data['kode'] = carikodebarang();
+		if(!$this->session->userdata('kodebeli')){
+		$milliseconds = floor(microtime(true) * 1000);
+		$this->session->set_userdata('kodebeli','BL'.$milliseconds);
+		}
 		$this->load->view('header', $header);
 		$this->load->view('page/pembelian', $data);
 		$this->load->view('footer');
+	}
+	function carisupplier(){
+		$this->load->view('modal/carisupplier');
+	}
+	public function caridatasupplier()
+	{
+		$data = $_POST['kodd'];
+		// $jumlah = $this->m_pembelian->caridatasupplier($data)->result();
+		$hasil = $this->Mpembelian->caridatasupplier($data)->result_array();
+		$html = '';
+		// if($jumlah->num_rows > 0){
+		foreach ($hasil as $data) {
+			// $selek = $data['id']==$grup ? "selected" : "";
+			$html .= "<tr class='tabel-bodi text-hitam'><td>" . $data['kodepos'] . "</td><td>" . $data['nama'] . "</td><td>" . $data['alamat'] . "</td><td>" . $data['cp'] . "</td>";
+			$html .= "<td style='text-align: center;'><a href='#' class='btn btn-sm bg-info flat text-hitam font-kecil-13' id='pilihsupplier' rel='" . $data['id'] . "' >Pilih</a></td></tr>";
+		}
+		// }else{
+		// $html .= "<tr class='tabel-bodi'><td style='vertical-align: middle; text-align: center;' colspan='5'>Data tidak ditemukan</td></tr>";
+		// }
+		$cocok  = array('datagroup' => $html);
+		echo json_encode($cocok);
+	}
+	public function getdatasupplier(){
+		$id = $_POST['kodd'];
+		$hasil = $this->Mpembelian->getdatasupplier($id)->result();
+		echo json_encode($hasil);
 	}
 	function hapus($id)
 	{

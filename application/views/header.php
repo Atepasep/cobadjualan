@@ -28,16 +28,18 @@
     <link href="<?= base_url() . 'assets/css/style.css' ?>" rel="stylesheet">
 
     <link href="<?= base_url() . 'assets/plugins/datepicker/dist/css/bootstrap-datepicker.css' ?>" rel="stylesheet">
-
+    <script type="text/javascript">
+    	base_url = '<?=base_url()?>';
+	</script>
 </head>
 
 <body id="page-top">
     <div class="modal fade" id="modalBox" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class='modal-dialog modal-xl'>
             <div class='modal-content'>
-                <div class='modal-header bg-info'>
+                <div class='modal-header'>
                     <!-- <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button> -->
-                    <h4 class='modal-title text-white' id='myModalLabel'> Pengaturan Pengguna</h4>
+                    <h4 class='modal-title text-black' id='myModalLabel'> Pengaturan Pengguna</h4>
                 </div>
                 <div class="fetched-data"></div>
             </div>

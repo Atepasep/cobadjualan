@@ -16,6 +16,14 @@ class Mpembelian extends CI_Model
 		$hasil = $this->db->get_where('barang',array('kode'=>$kode));
 		return $hasil;
 	}
+	function caridatasupplier($kode){
+		$query = $this->db->query("select * from supplier where nama like '%" . $kode . "%' ");
+        return $query;
+	}
+	function getdatasupplier($id){
+		$hasil = $this->db->query("select * from supplier where id = ".$id);
+		return $hasil;
+	}
 	function hapus($id)
 	{
 		$this->db->where('id', $id);
