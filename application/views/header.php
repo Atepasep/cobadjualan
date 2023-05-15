@@ -196,7 +196,7 @@
                         <a class="collapse-item font-kecil-12" href="<?= base_url() . 'kategori' ?>">Kategori</a>
                         <a class="collapse-item font-kecil-12" href="<?= base_url() . 'satuan' ?>">Satuan</a>
                         <a class="collapse-item font-kecil-12" href="<?= base_url() . 'barang' ?>">Barang</a>
-                        <a class="collapse-item font-kecil-12" href="<?= base_url() . 'ptkp' ?>">Bill Of Material</a>
+                        <!-- <a class="collapse-item font-kecil-12" href="">Bill Of Material</a> -->
                         <a class="collapse-item font-kecil-12" href="<?= base_url() . 'supplier' ?>">Supplier</a>
                         <a class="collapse-item font-kecil-12" href="<?= base_url() . 'customer' ?>">Customer</a>
                     </div>
@@ -209,7 +209,7 @@
             </div>
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item <?= $tif3 ?>">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="<?= base_url().'pembelian' ?>">
                     <i class="fas fa-fw fa-chevron-left"></i>
                     <span>Pembelian</span>
                 </a>

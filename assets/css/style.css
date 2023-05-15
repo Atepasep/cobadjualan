@@ -32,6 +32,10 @@
 	color: #6b5747 !important;
 }
 
+.text-hitam {
+	color: #181818 !important;
+}
+
 .flat {
 	border-radius: 0px !important;
 }
@@ -216,6 +220,11 @@ select.kecil {
 .invalid {
 	/* border: 2px solid rgb(153, 16, 16); */
 	border: 2px solid #e74a3b;
+}
+
+.totaljual {
+	float: right;
+	font-size: 30px;
 }
 
 @media only screen and (max-width: 1366px) {

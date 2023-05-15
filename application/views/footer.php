@@ -108,8 +108,8 @@
                    <script src="<?= base_url() . 'assets/js/jscustomer.js' ?>"></script>
                <?php
                     break;
-                case 'mastergaji': ?>
-                   <script src="<?= base_url() . 'assets/js/jsmastergaji.js' ?>"></script>
+                case 'pembelian': ?>
+                   <script src="<?= base_url() . 'assets/js/jspembelian.js' ?>"></script>
                <?php
                     break;
                 case 'payroll': ?>
